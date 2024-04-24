@@ -1,4 +1,4 @@
-# Your Project Name
+# Djanho auth
 
 This project is test project implementing django auth.
 
