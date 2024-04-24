@@ -80,3 +80,32 @@ Here is a list of endpoints available in the API:
    - Method: GET
    - Parameters: `id` (in URL path), `Authorization` with token (in headers)
    - Response: JSON with the list of invited users on success, {'error': '<error_message>'} on failure
+
+## Web Version Endpoints
+
+Here is a list of endpoints available in the web version:
+
+1. **Main Page**: 
+   - Endpoint: `/`
+   - Description: Renders the registration page of the website.
+   - Method: GET
+   - Response: HTML page rendered by the `main_page` view
+   
+2. **Login Page**: 
+   - Endpoint: `/login/`
+   - Description: Renders the login page.
+   - Method: GET
+   - Response: HTML page rendered by the `login_page` view
+   
+3. **User Profile Page**: 
+   - Endpoint: `/user/<id>/`
+   - Description: Renders the user profile page.
+   - Method: GET
+   - Parameters: `id` (in URL path)
+   - Response: HTML page rendered by the `user_profile_page` view
+   
+4. **Logout**: 
+   - Endpoint: `/logout/`
+   - Description: Logs out the user and redirects to the login page.
+   - Method: GET
+   - Response: Redirects to the login page after logout
