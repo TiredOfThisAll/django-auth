@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "9c8476de-f781-47bc-9399-91da7538586e",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34507884"
+	},
+	"item": [
+		{
+			"name": "Send Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "+88005553535",
+							"description": "Send verification code to user",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/send-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"send-code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Code2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone_number",
+							"value": "+66005553531",
+							"description": "Send valid phone",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/send-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"send-code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Code Invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "inserted_code",
+							"value": "111111",
+							"description": "Verify inserted code",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+66005553531",
+							"description": "Used phone number",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/verify-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"verify-code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "inserted_code",
+							"value": "123321",
+							"description": "Verify inserted code",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+66005553531",
+							"description": "Used phone number",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/verify-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"verify-code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user Invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "111111",
+							"description": "Invalid token",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Bill",
+							"description": "First Name",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Gates",
+							"description": "Last Name",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+66005553531",
+							"description": "Phone Number",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "windows",
+							"description": "Username",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123321",
+							"description": "Password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/add-user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"add-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user valid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "123321",
+							"description": "Valid token",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Bill",
+							"description": "First Name",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Gates",
+							"description": "Last Name",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+66005553531",
+							"description": "Phone Number",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "windows",
+							"description": "Username",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123321",
+							"description": "Password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/add-user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"add-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "windows",
+							"description": "Username",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123321",
+							"description": "Password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/verificate-user/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"verificate-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Info by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c926accf0c306d6e094aef33e6d9c35caa110240",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/8/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"8",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply invite code",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c926accf0c306d6e094aef33e6d9c35caa110240",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "PTZj8W",
+							"description": "Apply invite code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/8/apply-invite-code/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"8",
+						"apply-invite-code",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get invited users Invalid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c926accf0c306d6e094aef33e6d9c35caa110240",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "PTZj8W",
+							"description": "Wrong invite code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/8/get-invited-users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"8",
+						"get-invited-users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get invited users Valid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c926accf0c306d6e094aef33e6d9c35caa110240",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "1O594B",
+							"description": "Invite code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/8/get-invited-users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"8",
+						"get-invited-users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token c926accf0c306d6e094aef33e6d9c35caa110240",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invite_code",
+							"value": "1O594B",
+							"description": "Invite code",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/8/get-invited-users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"8",
+						"get-invited-users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
