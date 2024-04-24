@@ -15,8 +15,8 @@ This project is divided into two main parts:
 To run the project, follow these steps:
 
 1. Install Python.
-2. Clone the repository: `git clone https://github.com/your_project.git`.
-3. Navigate to the project directory: `cd your_project`.
+2. Clone the repository: `git clone https://github.com/TiredOfThisAll/django-auth.git`.
+3. Navigate to the project directory: `cd path where the project located`.
 4. Install dependencies: `pip install -r requirements.txt`.
 5. Apply migrations: `python manage.py migrate`.
 6. Run the server: `python manage.py runserver`.
