@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+    <div class="registration-form">
+        <div class="form-group">
+            <label for="inputPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneInput" aria-describedby="telHelp" placeholder="Enter your phone number">
+            <small id="telHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+        </div>
+        <div class="verification-container"></div>
+        <div class="userdata-container"></div>
+        <div class="submit-group">
+            <button type="button" class="btn btn-primary" id="sendCode" onclick="sendCode()">Send Code</button>
+            <div>Already Signed in?
+                <a href="{% url 'web:login' %}">Sign up</a>
+            </div>
+        </div>
+    </div>
+{% csrf_token %}
+{% endblock content %}

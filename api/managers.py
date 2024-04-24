@@ -1,0 +1,24 @@
+from django.contrib.auth.base_user import BaseUserManager
+
+
+class CustomUserManager(BaseUserManager):
+    def create_user(self, first_name, last_name, phone_number, username, password, invited_by, **extra_fields):
+        """
+        Create and save a user with the given email and password.
+        """
+        if not username:
+            raise ValueError("All fields must be set")
+        user = self.model(first_name, last_name, phone_number, username, password, invited_by, **extra_fields)
+        user.save()
+        return user
+
+    def create_superuser(self, first_name, last_name, phone_number, username, password, invited_by, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+        return self.create_user(first_name, last_name, phone_number, username, password, invited_by, **extra_fields)

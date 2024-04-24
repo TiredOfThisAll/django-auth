@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>User Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userID">User ID:</label>
+                            <input type="text" id="userID" class="form-control" value="{{ id }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" id="firstName" class="form-control" value="{{ first_name }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" class="form-control" value="{{ last_name }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber" class="form-control" value="{{ phone_number }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="inviteCode">Invite Code:</label>
+                            <input type="text" id="inviteCode" class="form-control" value="{{ invite_code }}" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">            
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Invited By</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="invite_code_input">Invite Code:</label>
+                            {% if invited_by %}
+                                <input type="text" id="inviteCodeInput" class="form-control" value="{{ invited_by }}" disabled>
+                            {% else %}
+                                <input type="text" id="inviteCodeInput" class="form-control" value="">
+                                <button style="margin-top: 10px;" type="button" class="btn btn-primary" id="submitButton" onclick="applyInviteCode()">Apply Code</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if invited_users %}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">            
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Invited Users</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="invite_code_input">Phone Number:</label>
+                                {% for user in invited_users %}
+                                    <input type="text" id="inviteCodeInput" class="form-control" value="{{ user.phone_number }}" disabled>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% csrf_token %}
+{% endblock content %}

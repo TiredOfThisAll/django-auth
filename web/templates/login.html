@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+    <div class="registration-form">
+        <div class="form-group">
+            <label for="inputLogin">Login</label>
+            <input type="tel" class="form-control" id="loginInput" aria-describedby="loginHelp" placeholder="Enter your Login">
+        </div>
+        <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="tel" class="form-control" id="passwordInput" aria-describedby="passwordHelp" placeholder="Enter your Password">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="verificateUser()">Submit</button>
+        <div>Don't have an account?<a href="{% url 'web:main_page' %}">Sign In</a></div>
+    </div>
+{% csrf_token %}
+{% endblock content %}
