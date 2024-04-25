@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: "redis/redis-stack-server"
+    container_name: my_redis_container
+  postgres:
+    image: "postgres:alpine3.19"
+    container_name: my_postgres_container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "123321"
+      POSTGRES_DB: "brand_new_db"
+    healthcheck:
+      test: ["CMD", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  web:
+    container_name: django-container
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"

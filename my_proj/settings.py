@@ -90,8 +90,8 @@ DATABASES = {
         "NAME": "brand_new_db",
         "USER": "postgres",
         "PASSWORD": "123321",
-        "HOST": "localhost",
-        "PORT": "8080",
+        "HOST": "my_postgres_container",
+        "PORT": "5432",
     }
 }
 

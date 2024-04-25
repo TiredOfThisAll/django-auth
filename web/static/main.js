@@ -123,13 +123,18 @@ function applyInviteCode(){
     const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value;
     const inviteCodeInput = document.querySelector("#inviteCodeInput");
     const userID = document.querySelector("#userID").value;
+    const token = localStorage.getItem("token");
 
     if (!inviteCodeInput.value) return alert("Invite code must be provided");
 
     formData.append("csrfmiddlewaretoken", csrf);
     formData.append("invite_code", inviteCodeInput.value);
 
-    fetch("/api/user/" + userID +"/apply-invite-code/", {method: "POST", body: formData})
+    fetch("/api/user/" + userID +"/apply-invite-code/", {
+        method: "POST",
+        body: formData,
+        headers: {'Authorization': 'Token ' + token}
+    })
     .then(response => response.json())
     .then(data => {
         if (data.error) return alert(data.error);

@@ -11,7 +11,7 @@ from .utils.hash import hash_password, verify_password
 from .utils.user_codes import generate_invite_code, generate_verification_code
 
 
-r = redis.Redis(host='localhost', port=6379, decode_responses=True)
+r = redis.Redis(host='my_redis_container', port=6379, decode_responses=True)
 
 @api_view(["POST"])
 def send_code(request):
